@@ -1,0 +1,13 @@
+{
+  "name": "testive",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.14",
+    "underscore": "~1.6.0",
+    "almond": "~0.2.9",
+    "backbone-nested-model": "~2.0.1",
+    "DateJS": "~1.0.0-rc1"
+  }
+}
