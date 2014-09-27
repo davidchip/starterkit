@@ -10,6 +10,9 @@ define [
         _routes:
             "home":                                      "(home/)"
 
+        initialize: (options) =>
+            super options
+
         home: () =>
             alert 'home'
 

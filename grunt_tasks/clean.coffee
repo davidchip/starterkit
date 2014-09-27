@@ -10,11 +10,12 @@ module.exports = ->
         everything: ["target/"],
 
         release: [
-            "target/*", 
-            "!target/images/**", 
+            "target/*"
+            "!target/images/**"
             "!target/initial_load.min.css"
             "!target/styles.min.css"
-            "!target/source.min.js", 
+            "!target/source.min.js"
+            "!target/index.html"
         ]
 
     }

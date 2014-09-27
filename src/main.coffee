@@ -23,18 +23,6 @@ define [
     };
 
 
-    ## create our singleton user and router
-    window.user = new UserModels.User()
-
-
-    ## fetch our user object and start our app when we've retrieved it
-    window.user.fetch({
-        success: (model) ->
-            window.router = new Router()
-            Backbone.history.start({ pushState: true, root: "/" })
-    })
-
-
     ## when a <a> tag with class 'push-state' is tapped,
     ## treat that like a router.navigate call
     $('body').delegate('.push-state', 'click', (event) =>
@@ -59,3 +47,7 @@ define [
             ), 100
         )
     )
+
+    ## start our app
+    window.router = new Router()
+    Backbone.history.start({ pushState: true })

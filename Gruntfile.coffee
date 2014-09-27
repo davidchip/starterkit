@@ -37,7 +37,7 @@ module.exports = ->
     ## Moves all needed libraries, files, images, etc.
     ## over to our target/ directory, where they are passed through
     ## our r.js optimizer, css minifiers, and image optimizers.
-    @registerTask("local_release", [
+    @registerTask("release", [
         ## remove our target/ directory
         "clean:everything",
 
@@ -61,7 +61,7 @@ module.exports = ->
 
         ## render our Django index.html file and update it
         "gitinfo",
-        "processhtml:local_release",
+        "processhtml:release",
 
         ## remove all extraneous files that aren't required for production
         "clean:release",
@@ -71,23 +71,5 @@ module.exports = ->
 
         ## let the world know about your awesomeness... well... maybe not
         ## the world. pop up a notification just for your own satisfaction
-        "notify:release"
-    ])
-
-
-    ## Almost exactly the same as local_release, but slightly alters the
-    ## structure of our Django index.html file for a production setting
-    @registerTask("release", [
-        "clean:everything",
-        "less:release",
-        "copy:libs",
-        "copy:images",
-        "imageEmbed:release",
-        "coffee:release",
-        "requirejs:release",
-        "gitinfo",
-        "processhtml:release",  ## different
-        "clean:release",
-        "rename",
         "notify:release"
     ])
